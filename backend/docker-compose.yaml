@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:latest
+    container_name: redis-container
+    environment:
+      - REDIS_PASSWORD=Yupa6wChHtE3Gf6l6GMG
+    ports:
+      - "6379:6379"
+    networks:
+      - app-network
+    command: ["redis-server", "--requirepass", "Yupa6wChHtE3Gf6l6GMG"]
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres-container
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=pQfIDEP7VwFcCR2QIxBc
+      - POSTGRES_DB=m5
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  spring-app:
+    image: your-spring-app-image:latest
+    container_name: spring-app-container
+    ports:
+      - "8080:8080"
+    depends_on:
+      - redis
+      - postgres
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  postgres-data:
+    driver: local

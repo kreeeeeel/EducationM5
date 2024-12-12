@@ -1,0 +1,102 @@
+spring:
+  data:
+    redis:
+      host: 185.221.155.74
+      password: 'Yupa6wChHtE3Gf6l6GMG'
+      port: 6379
+  flyway:
+    baseline-on-migrate: true
+    locations: classpath:migration
+  datasource:
+    url: jdbc:postgresql://185.221.155.74:5432/m5_v2
+    username: postgres
+    password: pQfIDEP7VwFcCR2QIxBc
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        globally_quoted_identifiers: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        show_sql: true # Включить отображение SQL-запросов в логи
+        format_sql: true # Форматировать SQL-запросы для удобства чтения
+        use_sql_comments: true # Добавлять комментарии в SQL-запросы (опционально)
+
+jwt:
+  key: '1CtBXHcnULyXMLdQE4W4g0r1DIpoFvrgsLPo3Kaou7JSSYT5scpBSdTP41rJaIDwzMnF2P2Ja67dwYMKz5UR45gAL36JHhtAvPSB0ZgtTsDidR7EyKcnOLGNY5RxxejPi22Wanz0UfEHQnVseD5V8uao3e0aAuoEBO8oIosSNJeCxL1neyHagsq34RlfSlIHbn2IYLcymmzOwX7Mc4Mmu2COBUujS1Znvx8Autqd1pn5qZJQ72QzophEegnVCcce'
+  expire: 86400000
+
+bot:
+  token: 7911824241:AAHRUEQwrhFwHfl6mIxrNQuwkZciznekLzA
+  username: shabashoff_game
+  mini-app: https://t.me/shabashoff_game_bot/tm5
+  start-message: |
+           🎉 Хакатон M5: Игра M5
+           
+           Приветствуем вас! 🚀 Мы создали уникального Telegram-бота, который позволит вам погрузиться в захватывающий мир виртуальных гонок! 🏎️💨
+           
+           ✨ Уникальная игровая механика с виртуальным топливом для улучшения характеристик вашего транспортного средства.
+           🆕 Периодическое начисление топлива и вознаграждения за привлечение новых пользователей!
+           🔗 Интеграция с Telegram Stars для обработки операций и подтверждения транзакций.
+           📊 Система рейтинга пользователей и бизнесы! 🏁
+           🎨 Графика, созданная с помощью наших бекендерских слез, для яркого визуального оформления.
+           
+           Вообщем мы старались 🌟
+  start-photo: https://ibb.co/ZT7TDLH
+
+feature-flag:
+  login-check-enabled: false
+
+default:
+  fuel: 50
+  referral-bonus: 50
+  passive-income: 20
+  photo:
+    - https://eat_work_test.hb.ru-msk.vkcloud-storage.ru/img/bear.png
+    - https://eat_work_test.hb.ru-msk.vkcloud-storage.ru/img/cat.png
+    - https://eat_work_test.hb.ru-msk.vkcloud-storage.ru/img/chick.png
+    - https://eat_work_test.hb.ru-msk.vkcloud-storage.ru/img/cool.png
+    - https://eat_work_test.hb.ru-msk.vkcloud-storage.ru/img/cow.png
+    - https://eat_work_test.hb.ru-msk.vkcloud-storage.ru/img/panda.png
+    - https://eat_work_test.hb.ru-msk.vkcloud-storage.ru/img/puffer-fish.png
+    - https://eat_work_test.hb.ru-msk.vkcloud-storage.ru/img/rabbit.png
+    - https://eat_work_test.hb.ru-msk.vkcloud-storage.ru/img/shark.png
+    - https://eat_work_test.hb.ru-msk.vkcloud-storage.ru/img/wolf.png
+
+
+race:
+  cost: 10
+  car-service-minute: 1
+  top-users-count: 10
+  factor: 20
+
+reward:
+  claim-get-from-hour: 1
+  max-days: 31
+  claim-day: 50
+  ads-count-day: 2
+  ads:
+    nt1p3b65782fnx2: CLEAR_CLAIM_TIME_ADS
+
+business:
+  claim-minus-minute: 5
+  discount: 0.05
+  referral-bonus: 100
+  racing-minus-minute: 1
+
+exp:
+  bonus-for-update-fuel: 50
+  maximum-quantity-for-update: 100
+  receiving-awards: 5
+  user-invitation: 10
+  interaction-with-business: 15
+  interaction-with-car: 20
+  participation-the-race: 30
+  completing-missions: 25
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG # Логи SQL-запросов
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE # Логи параметров запросов

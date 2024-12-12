@@ -1,0 +1,10 @@
+package ru.shabashoff.m5.dto.type
+
+enum class ExperienceEvent {
+    RECEIVING_AWARDS,
+    USER_INVITATION,
+    INTERACTION_WITH_BUSINESS,
+    INTERACTION_WITH_CAR,
+    PARTICIPATION_IN_RACE,
+    COMPLETING_MISSIONS
+}
